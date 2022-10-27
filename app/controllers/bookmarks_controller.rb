@@ -24,18 +24,18 @@ class BookmarksController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  private
-
-  def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id)
-  end
-
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
     # No need for app/views/bookmarks/destroy.html.erb
-    redirect_to bookmarks_path, status: :see_other
+    redirect_to bookmark_path, status: :see_other
   end
+
+  private
+
+  def bookmark_params
+    params.require(:bookmark).permit(:comment, :movie_id, :bookmark_id)
+  end
+
 
 end
