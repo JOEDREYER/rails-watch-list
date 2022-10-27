@@ -1,0 +1,18 @@
+<h1><%= @list.name %></h1>
+
+<div>
+<% @list.bookmarks.each do |bookmark| %>
+<%= bookmark.comment%>
+<% end %>
+</div>
+
+  
+
+  <%= link_to "Delete",
+  list_path(@list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
+<%= link_to "Create a new bookmark",
+  new_list_bookmark_path(@list)
+%>

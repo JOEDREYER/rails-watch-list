@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <i class="fa-sharp fa-solid fa-camera-movie"></i>
+      <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      movie finder
+    </a>
+  </div>
+</nav>
+
+<div class=" center container d-inline-flex">
+<h1>Save your fav movies with ease</h1>
+<p>enjoy</p>
+</div>
+
+<div class="card" style="width: center">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+
+<ul class = flex>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.name, list_path(list) %></li>
+  <% end %>
+</ul>
+
+<div class="rounded-pill p-3 mb-2 bg-primary text-white d-inline-flex p-2 bd-highlight ">Create a new movie list</div>
