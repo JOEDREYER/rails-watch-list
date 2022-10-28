@@ -1,13 +1,5 @@
 <h1>I am a new bookmark</h1>
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Bookmark</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Delete</a>
-  </div>
-</div>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
@@ -16,6 +8,11 @@
 <% end %>
 
 <%= link_to "Delete",
-  list_bookmark_path(@bookmark),
+  lists_path(@bookmark),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+
+<%= link_to "Delete",
+  lists_path(@bookmark),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
